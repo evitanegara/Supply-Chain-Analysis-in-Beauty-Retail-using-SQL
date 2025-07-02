@@ -39,8 +39,8 @@ ORDER BY Total_Revenue DESC;
 - Haircare and Skincare dominate the top 10 list, accounting for 8 of 10 SKUs, pointing to consistent market demand in these categories.
 - SKU31 stands out with high revenue (9,655.14) from just 168 units sold, suggesting high pricing or strong profit margins.
 
-  ```sql
-SELECT TOP 10
+ ```sql
+SELECT  TOP 10
     SKU,
     Product_type,
     Supplier_name,
@@ -55,14 +55,16 @@ ORDER BY Total_Revenue DESC;
 - Supplier 1 generates the highest revenue at 157,529, followed by Supplier 2 (125,467) and Supplier 5 (110,343).
 - Supplier 4 underperforms at 86,468, despite a wide product range—potentially due to pricing strategy, turnover rates, or sales reach.
 - These figures highlight the varying effectiveness of supplier performance and may support renegotiation or reallocation of supply partnerships.
-  ```sql
-SELECT
+
+ ```sql
+SELECT 
     Supplier_name,
     SUM(Revenue_generated) AS Total_Revenue
 FROM dbo.supplychain
 GROUP BY Supplier_name
 ORDER BY Total_Revenue DESC;
 ```
+
 ### Best-Selling Product Type by Supplier
 - Supplier 1 and Supplier 3 derive most of their revenue from Skincare, indicating specialization in this high-volume category.
 - Supplier 2 and Supplier 4 generate the bulk of their sales through Haircare products.
@@ -93,8 +95,8 @@ ORDER BY Supplier_name;
 - Non-binary customers also show meaningful engagement with 116,365 in revenue, indicating inclusive product appeal.
 - The demographic breakdown reveals opportunities to improve data capture while also validating diverse market engagement.
   
- ```sql
-  SELECT 
+  ```sql
+SELECT 
   Customer_demographics AS Gender,
   SUM(Revenue_generated) AS Total_Revenue
 FROM dbo.supplychain
@@ -111,7 +113,7 @@ ORDER BY Total_Revenue DESC;
 - Supplier 4 specializes in haircare (10 SKUs), but is limited in skincare and cosmetics with only 4 SKUs each.
 - Supplier 5 maintains a moderate but balanced SKU diversity across all three categories.
   
-  ```sql
+ ```sql
 SELECT 
   Supplier_name,
   Product_type,
@@ -125,7 +127,7 @@ GROUP BY Supplier_name, Product_type;
 - Supplier 1 achieved the highest pass rate (48.15%), indicating strong quality assurance practices.
 - Supplier 5 reported the lowest pass rate (16.67%), reflecting weaker product compliance compared to peers.
 
-  ```sql
+ ```sql
 SELECT 
   Supplier_name,
   Inspection_results,
@@ -138,7 +140,7 @@ GROUP BY Supplier_name, Inspection_results;
 - Supplier 2 and Supplier 5 also perform well in order volume, reflecting consistent buyer engagement.
 - Supplier 3, despite a relatively strong pass rate, receives the lowest total orders, suggesting lower demand or product availability.
 
-  ```sql
+ ```sql
 SELECT 
     Supplier_name,
     SUM(Order_quantities) AS Total_Ordered_Quantity
@@ -151,8 +153,7 @@ ORDER BY Total_Ordered_Quantity DESC;
 - Cosmetics maintain the highest average stock level (58 units), which could indicate overstocking or slower turnover rates.
 - Haircare holds an average stock level of 48 units, balancing availability and demand.
 - Skincare maintains the leanest inventory at 40 units on average, potentially due to higher sales velocity or tighter inventory management.
-
-  ```sql
+ ```sql
 SELECT 
     Product_type,
     ROUND(AVG(Stock_levels), 2) AS Avg_Stock_Level
@@ -164,6 +165,7 @@ GROUP BY Product_type;
 - Supplier 2 produced the highest volume (14,105) but sold only slightly more than Supplier 1, possibly pointing to overproduction or unsold inventory.
 - Supplier 4 shows the widest gap between production (11,756) and sales (7,206), raising concerns around demand forecasting or excess stock.
 - Supplier 5 maintains a healthy production-to-sales balance (Production: 9,381 vs Sales: 8,662), showing efficient supply alignment.
+
  ```sql
 SELECT 
   Supplier_name,
