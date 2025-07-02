@@ -22,7 +22,7 @@ This SQL based analysis uncovers key insights across sales, shipping logistics, 
 - Haircare ranks second with 174,000 in revenue from 13,611 units sold at an average price of 46.01, reflecting steady demand.
 - Cosmetics, though priced highest at an average of 57.36, ranks third in revenue (161,000) due to lower volume (11,757 units).
 - This suggests that premium pricing in Cosmetics may limit unit sales, while Skincare benefits from a high-volume, mid-priced strategy.
-  ```sql
+ ```sql
 SELECT 
     Product_type,
     SUM(Revenue_generated) AS Total_Revenue,
