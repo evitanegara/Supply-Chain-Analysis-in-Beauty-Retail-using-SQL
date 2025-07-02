@@ -16,8 +16,7 @@ The dataset is organized in a single wide-format table named `supplychain`, enco
 This SQL based analysis uncovers key insights across sales, shipping logistics, supplier quality, and stock movement in the beauty product industry. Skincare leads in revenue, driven by high unit sales, while cosmetics command the highest unit price. Supplier 1 emerges as the top contributor across revenue, product variety, and order volume, while Supplier 3 is notable for having more products sold than produced—indicating strong demand or tight inventory. Logistically, Route A with Carrier A is the most cost-effective combination, and rail is the dominant transport mode in terms of delivery volume. Quality inspection reveals Supplier 4’s high failure rate and Supplier 3’s delay in quality clearance, signaling risk. The data also highlights a potential gender data quality issue, with “Unknown” customers contributing the most revenue. These insights point toward opportunities in inventory optimization, supplier segmentation, and improved delivery planning, enabling more efficient operations and targeted product strategies.
 
 
-## Insights Deep-Dive
-## Sales Insight
+## Insights Deep-Dive (Sales Performance)
 ### Revenue, Volume, and Pricing by Product Type
 - Skincare leads in total revenue with over 241,000, driven by a high sales volume of 20,731 units despite a moderate average price of 47.26.
 - Haircare ranks second with 174,000 in revenue from 13,611 units sold at an average price of 46.01, reflecting steady demand.
@@ -46,6 +45,63 @@ This SQL based analysis uncovers key insights across sales, shipping logistics, 
 - Female customers generate 161,514 in revenue, slightly ahead of Male customers at 126,634.
 - Non-binary customers also show meaningful engagement with 116,365 in revenue, indicating inclusive product appeal.
 - The demographic breakdown reveals opportunities to improve data capture while also validating diverse market engagement.
+  
+## Insights Deep-Dive (Supply Chain)
+
+###  SKU Distribution by Supplier and Product Type
+- Supplier 1 offers the widest skincare assortment with 15 SKUs — the highest among all suppliers. It also provides strong coverage in cosmetics (7 SKUs) and haircare (5 SKUs).
+- Supplier 2 leads in haircare SKU variety (10 SKUs, tied with Supplier 4) and also contributes 7 cosmetics SKUs and 5 skincare SKUs.
+- Supplier 3 takes a focused approach, offering just 1 SKU in cosmetics, 5 in haircare, and 9 in skincare.
+- Supplier 4 specializes in haircare (10 SKUs), but is limited in skincare and cosmetics with only 4 SKUs each.
+- Supplier 5 maintains a moderate but balanced SKU diversity across all three categories.
+
+### Quality Inspection Results (Pass, Pending, Fail %)
+- Supplier 4 recorded the highest failure rate at 66.67%, signaling major quality control concerns.
+- Supplier 3 had the highest pending rate (66.67%), suggesting delays or bottlenecks in quality assessments.
+- Supplier 1 achieved the highest pass rate (48.15%), indicating strong quality assurance practices.
+- Supplier 5 reported the lowest pass rate (16.67%), reflecting weaker product compliance compared to peers.
+
+### Total Order Volume by Supplier
+- Supplier 1 leads with the highest total order quantity (1,458 units), showing strong demand or preferred supplier status.
+- Supplier 2 and Supplier 5 also perform well in order volume, reflecting consistent buyer engagement.
+- Supplier 3, despite a relatively strong pass rate, receives the lowest total orders, suggesting lower demand or product availability.
+
+### Average Stock Levels by Product Type
+- Cosmetics maintain the highest average stock level (58 units), which could indicate overstocking or slower turnover rates.
+- Haircare holds an average stock level of 48 units, balancing availability and demand.
+- Skincare maintains the leanest inventory at 40 units on average, potentially due to higher sales velocity or tighter inventory management.
+
+###  Production Quantity vs. Products Sold per Supplier
+- Supplier 3 is the only supplier that sold more than it produced (Sales: 8,083 vs Production: 7,997), indicating potential stock clearance or backorders.
+- Supplier 2 produced the highest volume (14,105) but sold only slightly more than Supplier 1, possibly pointing to overproduction or unsold inventory.
+- Supplier 4 shows the widest gap between production (11,756) and sales (7,206), raising concerns around demand forecasting or excess stock.
+- Supplier 5 maintains a healthy production-to-sales balance (Production: 9,381 vs Sales: 8,662), showing efficient supply alignment.
+
+## Insights Deep-Dive (Logistics)
+### Most Cost-Effective Route & Carrier Combination
+- The combination of Route A with Carrier A offers the lowest average shipping cost at 4.63 per unit, with a healthy total volume of 6,870 units.
+- Carrier B on Route B is also highly efficient, delivering 8,907 units at a competitive cost of 5.17 per unit.
+- In contrast, Carrier A on Route C has the highest average cost at 6.34 per unit with the lowest shipment volume, suggesting inefficiencies or expensive routing for that pair.
+
+### Average Delivery Cost by Transport Mode
+- Sea transport has the lowest average delivery cost at 4.97.
+- Air transport is the most expensive at 6.02, likely due to its speed and operational overhead.
+- Rail and Road provide a mid-range balance between cost and coverage, both under 5.55.
+
+### Carrier Performance by Shipment Count
+- Carrier B is the most frequently used with 43 shipments, followed by Carrier C (29) and Carrier A (28).
+- Carrier B’s higher usage implies stronger network capacity or more favorable contracts across multiple routes.
+
+### Delivery Volume by Transport Mode
+- Rail transported the highest product volume (13,493 units), followed closely by Road (13,120 units).
+- Sea and Air, while useful for specific regions or urgency, carried comparatively lower volumes.
+- Rail and Road likely support mass shipment strategies due to scalability and cost balance.
+
+### Average Delivery Time by Transport Mode and Route
+- Route C via Road is the fastest combination, with an average delivery time of just 3 days.
+- Sea transport is the slowest option, averaging 7 days across all three routes (A, B, and C), which may introduce delays for time-sensitive deliveries.
+- Air and Rail demonstrate consistent performance—Air remains steady at 5 days across all routes, while Rail ranges from 6 to 7 days depending on the route.
+- Businesses prioritizing speed should leverage Route C + Road, the most efficient configuration in terms of delivery time.
 
 ## Recommendations
 ### Product & Pricing Strategy
