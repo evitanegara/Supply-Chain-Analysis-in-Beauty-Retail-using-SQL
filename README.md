@@ -279,6 +279,7 @@ GROUP BY Transportation_modes, Routes;
 <p align="center">
   <img src="https://github.com/user-attachments/assets/96c63668-79de-4257-9887-b6cbd3624bca" alt="Dashboard Visual 8" width="400"/>
 </p>
+
 ## Recommendations
 ### Product & Pricing Strategy
 - Focus on Skincare Expansion: Skincare drives the highest revenue due to volume, suggesting it should remain a primary focus in marketing and production.
