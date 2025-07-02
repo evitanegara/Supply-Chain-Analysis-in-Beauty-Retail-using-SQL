@@ -238,7 +238,7 @@ SELECT
   ROUND(AVG(Shipping_costs), 2) AS Avg_Delivery_Cost
 FROM dbo.supplychain
 GROUP BY Transportation_modes;
-
+```
 <p align="center">
   <img src="https://github.com/user-attachments/assets/cdce1f86-f8da-461c-b655-0949ba4f65dd" alt="Dashboard Visual 6" width="400"/>
 </p>
