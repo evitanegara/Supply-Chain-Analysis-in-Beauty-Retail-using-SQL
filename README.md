@@ -226,6 +226,9 @@ GROUP BY Routes, Shipping_carriers
 ORDER BY Avg_Cost ASC;
 ```
 
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/e21166f8-937a-4d79-9134-5fd8e8d1d3be" alt="Dashboard Visual 5" width="400"/>
+</p>
 
 ### Average Delivery Cost by Transport Mode
 - Sea transport has the lowest average delivery cost at 4.97.
