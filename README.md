@@ -33,9 +33,8 @@ GROUP BY Product_type
 ORDER BY Total_Revenue DESC;
 ```
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/43a8afed-9567-425b-b9df-9cbe21ab91dc" alt="Dashboard Visual" width="400"/>
+  <img src="https://github.com/user-attachments/assets/8c052883-205a-4bb3-9043-2381a00ee716" alt="Dashboard Visual" width="400"/>
 </p>
-
 
 ### Top 10 SKUs by Revenue
 - Leading SKUs include SKU51 (Haircare) and SKU38 (Cosmetics), both supplied by Supplier 5, indicating strong supplier performance.
