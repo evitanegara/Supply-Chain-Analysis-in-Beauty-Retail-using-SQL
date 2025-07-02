@@ -259,7 +259,7 @@ GROUP BY Shipping_carriers
 ORDER BY Shipment_Count DESC;
 ```
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/1c5b9e10-87aa-4b5a-b463-88a221e672a7" alt="Dashboard Visual 7" width="400"/>
+  <img src="https://github.com/user-attachments/assets/aab87925-74e3-4af2-8e70-373ce7c279c5" alt="Dashboard Visual 7" width="400"/>
 </p>
 
 ### Average Delivery Time by Transport Mode and Route
