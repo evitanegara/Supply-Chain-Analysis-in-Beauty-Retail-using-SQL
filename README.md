@@ -94,8 +94,8 @@ ORDER BY Supplier_name;
 - Female customers generate 161,514 in revenue, slightly ahead of Male customers at 126,634.
 - Non-binary customers also show meaningful engagement with 116,365 in revenue, indicating inclusive product appeal.
 - The demographic breakdown reveals opportunities to improve data capture while also validating diverse market engagement.
-  
-  ```sql
+
+ ```sql
 SELECT 
   Customer_demographics AS Gender,
   SUM(Revenue_generated) AS Total_Revenue
