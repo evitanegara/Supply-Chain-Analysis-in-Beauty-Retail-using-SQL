@@ -32,6 +32,7 @@ FROM dbo.supplychain
 GROUP BY Product_type
 ORDER BY Total_Revenue DESC;
 ```
+![image](https://github.com/user-attachments/assets/4b295baf-6f07-417e-9bc4-5c8b439e17ed)
 
 ### Top 10 SKUs by Revenue
 - Leading SKUs include SKU51 (Haircare) and SKU38 (Cosmetics), both supplied by Supplier 5, indicating strong supplier performance.
@@ -50,6 +51,7 @@ FROM dbo.supplychain
 GROUP BY SKU, Product_type, Supplier_name
 ORDER BY Total_Revenue DESC;
 ```
+![image](https://github.com/user-attachments/assets/4675fc25-fe40-45f7-b195-d333a43d5b47)
 
 ### Revenue by Supplier
 - Supplier 1 generates the highest revenue at 157,529, followed by Supplier 2 (125,467) and Supplier 5 (110,343).
@@ -64,6 +66,7 @@ FROM dbo.supplychain
 GROUP BY Supplier_name
 ORDER BY Total_Revenue DESC;
 ```
+![image](https://github.com/user-attachments/assets/bfac379d-011f-4628-b2b3-c6cfa37feb6e)
 
 ### Best-Selling Product Type by Supplier
 - Supplier 1 and Supplier 3 derive most of their revenue from Skincare, indicating specialization in this high-volume category.
@@ -89,6 +92,8 @@ FROM ProductRevenue
 WHERE rnk = 1
 ORDER BY Supplier_name;
 ```
+![image](https://github.com/user-attachments/assets/82442631-c957-42f9-b2e0-d06004b2d516)
+
 ### Revenue by Customer Demographic (Gender)
 - "Unknown" gender customers contribute the most revenue (173,090), suggesting potential gaps in data collection or an increase in anonymous or guest checkouts.
 - Female customers generate 161,514 in revenue, slightly ahead of Male customers at 126,634.
@@ -103,7 +108,8 @@ FROM dbo.supplychain
 GROUP BY Customer_demographics
 ORDER BY Total_Revenue DESC;
 ```
-  
+  ![image](https://github.com/user-attachments/assets/ffb4ee71-709d-4c1d-9e30-031f092d1e88)
+
 ## Insights Deep-Dive (Supply Chain)
 
 ###  SKU Distribution by Supplier and Product Type
@@ -121,6 +127,8 @@ SELECT
 FROM dbo.supplychain
 GROUP BY Supplier_name, Product_type;
 ```
+![image](https://github.com/user-attachments/assets/f48ae400-abd0-4938-bd31-9a2b6d91567f)
+
 ### Quality Inspection Results (Pass, Pending, Fail %)
 - Supplier 4 recorded the highest failure rate at 66.67%, signaling major quality control concerns.
 - Supplier 3 had the highest pending rate (66.67%), suggesting delays or bottlenecks in quality assessments.
@@ -135,6 +143,8 @@ SELECT
 FROM dbo.supplychain
 GROUP BY Supplier_name, Inspection_results;
 ```
+![image](https://github.com/user-attachments/assets/c9ad3daa-4419-4cea-9a3e-d3b23db966f6)
+
 ### Total Order Volume by Supplier
 - Supplier 1 leads with the highest total order quantity (1,458 units), showing strong demand or preferred supplier status.
 - Supplier 2 and Supplier 5 also perform well in order volume, reflecting consistent buyer engagement.
@@ -148,6 +158,7 @@ FROM dbo.supplychain
 GROUP BY Supplier_name
 ORDER BY Total_Ordered_Quantity DESC;
 ```
+![image](https://github.com/user-attachments/assets/c7a58964-f8a2-472e-a9f4-8ca0ac575d0d)
 
 ### Average Stock Levels by Product Type
 - Cosmetics maintain the highest average stock level (58 units), which could indicate overstocking or slower turnover rates.
@@ -160,6 +171,8 @@ SELECT
 FROM dbo.supplychain
 GROUP BY Product_type;
 ```
+![image](https://github.com/user-attachments/assets/d9a643a4-d355-4104-a37d-bea4f410f83a)
+
 ###  Production Quantity vs. Products Sold per Supplier
 - Supplier 3 is the only supplier that sold more than it produced (Sales: 8,083 vs Production: 7,997), indicating potential stock clearance or backorders.
 - Supplier 2 produced the highest volume (14,105) but sold only slightly more than Supplier 1, possibly pointing to overproduction or unsold inventory.
@@ -174,6 +187,8 @@ SELECT
 FROM dbo.supplychain
 GROUP BY Supplier_name;
 ```
+![image](https://github.com/user-attachments/assets/3be7e4a4-51c0-418e-aced-e83535ba6f58)
+
 ## Insights Deep-Dive (Logistics)
 ### Most Cost-Effective Route & Carrier Combination
 - The combination of Route A with Carrier A offers the lowest average shipping cost at 4.63 per unit, with a healthy total volume of 6,870 units.
@@ -200,6 +215,8 @@ SELECT
 FROM dbo.supplychain
 GROUP BY Transportation_modes;
 ```
+![image](https://github.com/user-attachments/assets/cdce1f86-f8da-461c-b655-0949ba4f65dd)
+
 ### Carrier Performance by Shipment Count
 - Carrier B is the most frequently used with 43 shipments, followed by Carrier C (29) and Carrier A (28).
 - Carrier B’s higher usage implies stronger network capacity or more favorable contracts across multiple routes.
@@ -211,6 +228,8 @@ FROM dbo.supplychain
 GROUP BY Shipping_carriers
 ORDER BY Shipment_Count DESC;
 ```
+![image](https://github.com/user-attachments/assets/1957751e-c8fc-4f44-97ae-1c239e1de2e0)
+
 ### Average Delivery Time by Transport Mode and Route
 - Route C via Road is the fastest combination, with an average delivery time of just 3 days.
 - Sea transport is the slowest option, averaging 7 days across all three routes (A, B, and C), which may introduce delays for time-sensitive deliveries.
@@ -224,6 +243,8 @@ SELECT
 FROM dbo.supplychain
 GROUP BY Transportation_modes, Routes;
 ```
+![image](https://github.com/user-attachments/assets/96c63668-79de-4257-9887-b6cbd3624bca)
+
 ## Recommendations
 ### Product & Pricing Strategy
 - Focus on Skincare Expansion: Skincare drives the highest revenue due to volume, suggesting it should remain a primary focus in marketing and production.
