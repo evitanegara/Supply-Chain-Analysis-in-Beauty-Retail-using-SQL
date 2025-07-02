@@ -225,6 +225,7 @@ FROM dbo.supplychain
 GROUP BY Routes, Shipping_carriers
 ORDER BY Avg_Cost ASC;
 ```
+
 <p align="center">
   <img src="https://github.com/user-attachments/assets/cdce1f86-f8da-461c-b655-0949ba4f65dd" alt="Dashboard Visual 6" width="400"/>
 </p>
@@ -232,6 +233,7 @@ ORDER BY Avg_Cost ASC;
 - Sea transport has the lowest average delivery cost at 4.97.
 - Air transport is the most expensive at 6.02, likely due to its speed and operational overhead.
 - Rail and Road provide a mid-range balance between cost and coverage, both under 5.55.
+
  ```sql
 SELECT 
   Transportation_modes,
@@ -246,6 +248,7 @@ GROUP BY Transportation_modes;
 ### Carrier Performance by Shipment Count
 - Carrier B is the most frequently used with 43 shipments, followed by Carrier C (29) and Carrier A (28).
 - Carrier B’s higher usage implies stronger network capacity or more favorable contracts across multiple routes.
+  
  ```sql
 SELECT 
   Shipping_carriers,
@@ -264,8 +267,9 @@ ORDER BY Shipment_Count DESC;
 - Sea transport is the slowest option, averaging 7 days across all three routes (A, B, and C), which may introduce delays for time-sensitive deliveries.
 - Air and Rail demonstrate consistent performance—Air remains steady at 5 days across all routes, while Rail ranges from 6 to 7 days depending on the route.
 - Businesses prioritizing speed should leverage Route C + Road, the most efficient configuration in terms of delivery time.
+
  ```sql
-SELECT  
+SELECT 
   Transportation_modes,
   Routes,
   ROUND(AVG(Shipping_times), 2) AS Avg_Shipping_Time
