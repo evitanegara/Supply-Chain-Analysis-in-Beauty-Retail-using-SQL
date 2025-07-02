@@ -32,7 +32,10 @@ FROM dbo.supplychain
 GROUP BY Product_type
 ORDER BY Total_Revenue DESC;
 ```
-![image](https://github.com/user-attachments/assets/4b295baf-6f07-417e-9bc4-5c8b439e17ed)
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/43a8afed-9567-425b-b9df-9cbe21ab91dc" alt="Dashboard Visual" width="400"/>
+</p>
+
 
 ### Top 10 SKUs by Revenue
 - Leading SKUs include SKU51 (Haircare) and SKU38 (Cosmetics), both supplied by Supplier 5, indicating strong supplier performance.
@@ -51,7 +54,9 @@ FROM dbo.supplychain
 GROUP BY SKU, Product_type, Supplier_name
 ORDER BY Total_Revenue DESC;
 ```
-![image](https://github.com/user-attachments/assets/4675fc25-fe40-45f7-b195-d333a43d5b47)
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/4675fc25-fe40-45f7-b195-d333a43d5b47" alt="Dashboard Visual 1" width="400"/>
+</p>
 
 ### Revenue by Supplier
 - Supplier 1 generates the highest revenue at 157,529, followed by Supplier 2 (125,467) and Supplier 5 (110,343).
@@ -66,7 +71,9 @@ FROM dbo.supplychain
 GROUP BY Supplier_name
 ORDER BY Total_Revenue DESC;
 ```
-![image](https://github.com/user-attachments/assets/bfac379d-011f-4628-b2b3-c6cfa37feb6e)
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/bfac379d-011f-4628-b2b3-c6cfa37feb6e" alt="Dashboard Visual 2" width="400"/>
+</p>
 
 ### Best-Selling Product Type by Supplier
 - Supplier 1 and Supplier 3 derive most of their revenue from Skincare, indicating specialization in this high-volume category.
@@ -92,7 +99,9 @@ FROM ProductRevenue
 WHERE rnk = 1
 ORDER BY Supplier_name;
 ```
-![image](https://github.com/user-attachments/assets/82442631-c957-42f9-b2e0-d06004b2d516)
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/82442631-c957-42f9-b2e0-d06004b2d516" alt="Dashboard Visual 3" width="400"/>
+</p>
 
 ### Revenue by Customer Demographic (Gender)
 - "Unknown" gender customers contribute the most revenue (173,090), suggesting potential gaps in data collection or an increase in anonymous or guest checkouts.
@@ -108,7 +117,9 @@ FROM dbo.supplychain
 GROUP BY Customer_demographics
 ORDER BY Total_Revenue DESC;
 ```
-  ![image](https://github.com/user-attachments/assets/ffb4ee71-709d-4c1d-9e30-031f092d1e88)
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/ffb4ee71-709d-4c1d-9e30-031f092d1e88" alt="Dashboard Visual 4" width="400"/>
+</p>
 
 ## Insights Deep-Dive (Supply Chain)
 
@@ -127,7 +138,9 @@ SELECT
 FROM dbo.supplychain
 GROUP BY Supplier_name, Product_type;
 ```
-![image](https://github.com/user-attachments/assets/f48ae400-abd0-4938-bd31-9a2b6d91567f)
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/f48ae400-abd0-4938-bd31-9a2b6d91567f" alt="Dashboard Visual 1" width="400"/>
+</p>
 
 ### Quality Inspection Results (Pass, Pending, Fail %)
 - Supplier 4 recorded the highest failure rate at 66.67%, signaling major quality control concerns.
@@ -143,7 +156,9 @@ SELECT
 FROM dbo.supplychain
 GROUP BY Supplier_name, Inspection_results;
 ```
-![image](https://github.com/user-attachments/assets/c9ad3daa-4419-4cea-9a3e-d3b23db966f6)
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/c9ad3daa-4419-4cea-9a3e-d3b23db966f6" alt="Dashboard Visual 2" width="400"/>
+</p>
 
 ### Total Order Volume by Supplier
 - Supplier 1 leads with the highest total order quantity (1,458 units), showing strong demand or preferred supplier status.
@@ -158,7 +173,9 @@ FROM dbo.supplychain
 GROUP BY Supplier_name
 ORDER BY Total_Ordered_Quantity DESC;
 ```
-![image](https://github.com/user-attachments/assets/c7a58964-f8a2-472e-a9f4-8ca0ac575d0d)
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/c7a58964-f8a2-472e-a9f4-8ca0ac575d0d" alt="Dashboard Visual 3" width="400"/>
+</p>
 
 ### Average Stock Levels by Product Type
 - Cosmetics maintain the highest average stock level (58 units), which could indicate overstocking or slower turnover rates.
@@ -171,7 +188,9 @@ SELECT
 FROM dbo.supplychain
 GROUP BY Product_type;
 ```
-![image](https://github.com/user-attachments/assets/d9a643a4-d355-4104-a37d-bea4f410f83a)
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/d9a643a4-d355-4104-a37d-bea4f410f83a" alt="Dashboard Visual 4" width="400"/>
+</p>
 
 ###  Production Quantity vs. Products Sold per Supplier
 - Supplier 3 is the only supplier that sold more than it produced (Sales: 8,083 vs Production: 7,997), indicating potential stock clearance or backorders.
@@ -187,7 +206,9 @@ SELECT
 FROM dbo.supplychain
 GROUP BY Supplier_name;
 ```
-![image](https://github.com/user-attachments/assets/3be7e4a4-51c0-418e-aced-e83535ba6f58)
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/3be7e4a4-51c0-418e-aced-e83535ba6f58" alt="Dashboard Visual 5" width="400"/>
+</p>
 
 ## Insights Deep-Dive (Logistics)
 ### Most Cost-Effective Route & Carrier Combination
@@ -204,6 +225,9 @@ FROM dbo.supplychain
 GROUP BY Routes, Shipping_carriers
 ORDER BY Avg_Cost ASC;
 ```
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/cdce1f86-f8da-461c-b655-0949ba4f65dd" alt="Dashboard Visual 6" width="400"/>
+</p>
 ### Average Delivery Cost by Transport Mode
 - Sea transport has the lowest average delivery cost at 4.97.
 - Air transport is the most expensive at 6.02, likely due to its speed and operational overhead.
@@ -214,8 +238,10 @@ SELECT
   ROUND(AVG(Shipping_costs), 2) AS Avg_Delivery_Cost
 FROM dbo.supplychain
 GROUP BY Transportation_modes;
-```
-![image](https://github.com/user-attachments/assets/cdce1f86-f8da-461c-b655-0949ba4f65dd)
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/cdce1f86-f8da-461c-b655-0949ba4f65dd" alt="Dashboard Visual 6" width="400"/>
+</p>
 
 ### Carrier Performance by Shipment Count
 - Carrier B is the most frequently used with 43 shipments, followed by Carrier C (29) and Carrier A (28).
@@ -228,7 +254,10 @@ FROM dbo.supplychain
 GROUP BY Shipping_carriers
 ORDER BY Shipment_Count DESC;
 ```
-![image](https://github.com/user-attachments/assets/1957751e-c8fc-4f44-97ae-1c239e1de2e0)
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/1957751e-c8fc-4f44-97ae-1c239e1de2e0" alt="Dashboard Visual 7" width="400"/>
+</p>
+
 
 ### Average Delivery Time by Transport Mode and Route
 - Route C via Road is the fastest combination, with an average delivery time of just 3 days.
@@ -243,8 +272,9 @@ SELECT
 FROM dbo.supplychain
 GROUP BY Transportation_modes, Routes;
 ```
-![image](https://github.com/user-attachments/assets/96c63668-79de-4257-9887-b6cbd3624bca)
-
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/96c63668-79de-4257-9887-b6cbd3624bca" alt="Dashboard Visual 8" width="400"/>
+</p>
 ## Recommendations
 ### Product & Pricing Strategy
 - Focus on Skincare Expansion: Skincare drives the highest revenue due to volume, suggesting it should remain a primary focus in marketing and production.
