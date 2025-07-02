@@ -68,6 +68,7 @@ ORDER BY Total_Revenue DESC;
 - Supplier 2 and Supplier 4 generate the bulk of their sales through Haircare products.
 - Supplier 5 performs strongest in Cosmetics, possibly reflecting niche strength or premium market positioning.
 - This distribution supports the use of supplier-specific segmentation strategies for optimized marketing, procurement, and logistics.
+
  ```sql
 WITH ProductRevenue AS (
 	SELECT 
@@ -91,7 +92,7 @@ ORDER BY Supplier_name;
 - Female customers generate 161,514 in revenue, slightly ahead of Male customers at 126,634.
 - Non-binary customers also show meaningful engagement with 116,365 in revenue, indicating inclusive product appeal.
 - The demographic breakdown reveals opportunities to improve data capture while also validating diverse market engagement.
-- 
+  
  ```sql
   SELECT 
   Customer_demographics AS Gender,
@@ -208,11 +209,6 @@ FROM dbo.supplychain
 GROUP BY Shipping_carriers
 ORDER BY Shipment_Count DESC;
 ```
-### Delivery Volume by Transport Mode
-- Rail transported the highest product volume (13,493 units), followed closely by Road (13,120 units).
-- Sea and Air, while useful for specific regions or urgency, carried comparatively lower volumes.
-- Rail and Road likely support mass shipment strategies due to scalability and cost balance.
-
 ### Average Delivery Time by Transport Mode and Route
 - Route C via Road is the fastest combination, with an average delivery time of just 3 days.
 - Sea transport is the slowest option, averaging 7 days across all three routes (A, B, and C), which may introduce delays for time-sensitive deliveries.
