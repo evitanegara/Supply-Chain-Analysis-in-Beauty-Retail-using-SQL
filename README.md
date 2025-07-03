@@ -59,7 +59,7 @@ ORDER BY Total_Revenue DESC;
 
 ### Revenue by Supplier
 - Supplier 1 generates the highest revenue at 157,529, followed by Supplier 2 (125,467) and Supplier 5 (110,343).
-- Supplier 4 underperforms at 86,468, despite a wide product range—potentially due to pricing strategy, turnover rates, or sales reach.
+- Supplier 4 underperforms at 86,468, despite a wide product range, potentially due to pricing strategy, turnover rates, or sales reach.
 - These figures highlight the varying effectiveness of supplier performance and may support renegotiation or reallocation of supply partnerships.
 
  ```sql
@@ -78,7 +78,7 @@ ORDER BY Total_Revenue DESC;
 - Supplier 1 and Supplier 3 derive most of their revenue from Skincare, indicating specialization in this high-volume category.
 - Supplier 2 and Supplier 4 generate the bulk of their sales through Haircare products.
 - Supplier 5 performs strongest in Cosmetics, possibly reflecting niche strength or premium market positioning.
-- This distribution supports the use of supplier-specific segmentation strategies for optimized marketing, procurement, and logistics.
+- This distribution supports the use of supplier, specific segmentation strategies for optimized marketing, procurement, and logistics.
 
  ```sql
 WITH ProductRevenue AS (
@@ -105,7 +105,7 @@ ORDER BY Supplier_name;
 ### Revenue by Customer Demographic (Gender)
 - "Unknown" gender customers contribute the most revenue (173,090), suggesting potential gaps in data collection or an increase in anonymous or guest checkouts.
 - Female customers generate 161,514 in revenue, slightly ahead of Male customers at 126,634.
-- Non-binary customers also show meaningful engagement with 116,365 in revenue, indicating inclusive product appeal.
+- Non binary customers also show meaningful engagement with 116,365 in revenue, indicating inclusive product appeal.
 - The demographic breakdown reveals opportunities to improve data capture while also validating diverse market engagement.
 
  ```sql
@@ -264,7 +264,7 @@ ORDER BY Shipment_Count DESC;
 ### Average Delivery Time by Transport Mode and Route
 - Route C via Road is the fastest combination, with an average delivery time of just 3 days.
 - Sea transport is the slowest option, averaging 7 days across all three routes (A, B, and C), which may introduce delays for time-sensitive deliveries.
-- Air and Rail demonstrate consistent performance—Air remains steady at 5 days across all routes, while Rail ranges from 6 to 7 days depending on the route.
+- Air and Rail demonstrate consistent performance, Air remains steady at 5 days across all routes, while Rail ranges from 6 to 7 days depending on the route.
 - Businesses prioritizing speed should leverage Route C + Road, the most efficient configuration in terms of delivery time.
 
  ```sql
@@ -283,7 +283,7 @@ GROUP BY Transportation_modes, Routes;
 ### Product & Pricing Strategy
 - Focus on Skincare Expansion: Skincare drives the highest revenue due to volume, suggesting it should remain a primary focus in marketing and production.
 - Reevaluate Cosmetic Pricing: Cosmetics have the highest price but lower sales, indicating a need to review pricing strategies or improve value perception.
-- Leverage Premium SKUs: Products like SKU31 show high revenue despite low volume—these can be featured in premium collections or bundles.
+- Leverage Premium SKUs: Products like SKU31 show high revenue despite low volume, these can be featured in premium collections or bundles.
 
 ### Logistics Optimization
 - Prioritize Route A + Carrier A for bulk distribution due to lowest cost per unit.
@@ -293,7 +293,7 @@ GROUP BY Transportation_modes, Routes;
 
 ## Inventory & Stock Management
 - Rebalance Cosmetics Inventory: Cosmetics have the highest stock levels despite being the lowest in sales volume, suggesting possible overstock.
-- Monitor Skincare Inventory Closely: Skincare has lean stock and high turnover—ensure it doesn't fall below reorder points.
+- Monitor Skincare Inventory Closely: Skincare has lean stock and high turnover, ensure it doesn't fall below reorder points.
 
 ## Supplier Performance
 - Prioritize Supplier 1: Strong performance across revenue, SKU variety, order volume, and inspection pass rate makes Supplier 1 a strategic partner.
